@@ -8,3 +8,5 @@ Route::get('/', [BienController::class, 'index']);
 
 
 Route::get('/biens', [BienController::class, 'index']);
+Route::get('/biens/ajouter',[BienController::class,'ajouter']);
+Route::post('/biens/traitement',[BienController::class,'traitement']);
