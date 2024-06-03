@@ -49,10 +49,11 @@
                             <p class="card-text">{{ Str::limit($bien->description, 100) }}</p>
                             <!-- Affichage de la date de création de l'article -->
                             <p class="card-text"><small class="text-muted">Date de création: {{ $bien->created_at }}</small></p>
-                            <!-- Boutons d'actions (suppression et modification) -->
-                            {{-- <a href="{{ url('/posts_delete/'.$post->id) }}" class="btn btn-danger">Supprimer</a> --}}
-                            {{-- <a href="/update-post/{{ $post->id }}" class="btn btn-primary">Modifier</a> --}}
+                           
                         </div>
+                        <a class="btn btn-info btn-sm" href="{{ route('biens.show', $bien->id) }}">
+                                <i class="fa-solid fa-list"></i> Voir
+                            </a>
                     </div>
                 </div>
             @endforeach

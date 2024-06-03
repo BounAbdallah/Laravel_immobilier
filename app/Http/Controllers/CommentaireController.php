@@ -1,15 +1,14 @@
 <?php
 
-
+// App\Http\Controllers\CommentaireController.php
 
 namespace App\Http\Controllers;
 
 use App\Models\Bien;
-use App\Models\Commentaireai;
 use App\Models\Commentaire;
 use Illuminate\Http\Request;
 
-class CommentaireaireController extends Controller
+class CommentaireController extends Controller
 {
     public function store(Request $request, Bien $bien)
     {
@@ -18,37 +17,36 @@ class CommentaireaireController extends Controller
             'contenu' => 'required'
         ]);
 
-        $Commentaire = new Commentaire();
-        $Commentaire->name = $request->input('auteur');
-        $Commentaire->content = $request->input('contenu');
-        $Commentaire->bien_id = $bien->id;
-        $Commentaire->save();
+        $commentaire = new Commentaire();
+        $commentaire->auteur = $request->input('auteur');
+        $commentaire->contenu = $request->input('contenu');
+        $commentaire->bien_id = $bien->id;
+        $commentaire->save();
 
-        return redirect()->route('biens.show', $bien->id)->with('success', 'Commentaireaire ajouté');
+        return redirect()->route('biens.show', $bien->id)->with('success', 'Commentaire ajouté');
     }
 
-    public function edit(Commentaire $Commentaire)
+    public function edit(Commentaire $commentaire)
     {
-        return view('Commentaires.edit', compact('Commentaire'));
+        return view('commentaires.edit', compact('commentaire'));
     }
 
-    public function update(Request $request, Commentaire $Commentaire)
+    public function update(Request $request, Commentaire $commentaire)
     {
         $request->validate([
-            'name' => 'required',
-            'content' => 'required'
+            'auteur' => 'required',
+            'contenu' => 'required'
         ]);
 
-        $Commentaire->update($request->all());
+        $commentaire->update($request->all());
 
-        return redirect()->route('biens.show', $Commentaire->bien_id)->with('success', 'Commentaireaire mis à jour');
+        return redirect()->route('biens.show', $commentaire->bien_id)->with('success', 'Commentaire mis à jour');
     }
 
-    public function destroy(Commentaire $Commentaire)
+    public function destroy(Commentaire $commentaire)
     {
-        $Commentaire->delete();
+        $commentaire->delete();
 
-        return redirect()->route('biens.show', $Commentaire->bien_id)->with('success', 'Commentaireaire supprimé');
+        return redirect()->route('biens.show', $commentaire->bien_id)->with('success', 'Commentaire supprimé');
     }
 }
-

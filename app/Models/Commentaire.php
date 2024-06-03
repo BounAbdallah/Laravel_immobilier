@@ -8,15 +8,16 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Commentaire extends Model
 {
-    use HasFactory;
+  use HasFactory;
 
-    protected $fillable = [
+  protected $fillable = [
       'auteur',
       'contenu',
-        
-    ];
-    public function bien():BelongsTo
-    {
-        return $this->belongsTo(Bien::class);
-    }
+      'bien_id',
+  ];
+
+  public function bien(): BelongsTo
+  {
+      return $this->belongsTo(Bien::class);
+  }
 }
