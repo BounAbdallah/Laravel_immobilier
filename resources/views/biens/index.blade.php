@@ -50,7 +50,7 @@
                             <!-- Affichage de la date de création de l'article -->
                             <p class="card-text"><small class="text-muted">Date de création: {{ $bien->created_at }}</small></p>
                             <!-- Boutons d'actions (suppression et modification) -->
-                            {{-- <a href="{{ url('/posts_delete/'.$post->id) }}" class="btn btn-danger">Supprimer</a> --}}
+                            <a href="{{ url('/bien/delete/'.$bien->id) }}" class="btn btn-danger">Supprimer</a>
                             <a href="/update-bien/{{ $bien->id }}" class="btn btn-primary">Modifier</a>
                         </div>
                     </div>
