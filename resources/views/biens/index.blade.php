@@ -6,6 +6,8 @@
     <title>Immobilier</title>
     <!-- Inclusion de Bootstrap CSS pour le style -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Inclusion de Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <style>
         /* CSS personnalisé pour ajuster la taille des images dans les cartes */
         .card-img-top {
@@ -15,12 +17,42 @@
         }
         /* CSS pour centrer le contenu */
         .container {
-            max-width: 900px;
-            margin-top: 50px;
+            max-width: 1100px;
+            margin-top: 30px;
+        }
+        /* CSS pour l'en-tête */
+        .navbar-custom {
+            background-color: #01bddf;
+        }
+        .navbar-custom .navbar-brand,
+        .navbar-custom .nav-link {
+            color: #ffffff;
+        }
+        .navbar-custom .nav-link:hover {
+            color: #d3d3d3;
         }
     </style>
 </head>
 <body>
+    <!-- Barre de navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Immobilier</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-person-circle"></i> Connexion
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <!-- Conteneur principal centré -->
     <div class="container text-center">
         <!-- Titre de la page -->
@@ -39,12 +71,12 @@
                         <div class="card-body">
                             <!-- Affichage du nom de l'article -->
                             <h5 class="card-title">{{ $bien->nom }}</h5>
-                            <!--Afichage de la catégorie du bien -->
-                            <div class="card-tex">{{ $bien->categorie}}</div>
-                            <!--Afichage de la catégorie du bien -->
-                            <div class="card-tex">{{ $bien->adresse}}</div>
-                            <!--Afichage de la catégorie du bien -->
-                            <div class="card-tex">{{ $bien->statut}}</div>
+                            <!-- Affichage de la catégorie du bien -->
+                            <div class="card-text"><strong>Catégorie:</strong> {{ $bien->categorie }}</div>
+                            <!-- Affichage de l'adresse du bien -->
+                            <div class="card-text"><strong>Adresse:</strong> {{ $bien->adresse }}</div>
+                            <!-- Affichage du statut du bien -->
+                            <div class="card-text"><strong>Statut:</strong> {{ $bien->statut }}</div>
                             <!-- Affichage de la description avec une limite de 100 caractères -->
                             <p class="card-text">{{ Str::limit($bien->description, 100) }}</p>
                             <!-- Affichage de la date de création de l'article -->
