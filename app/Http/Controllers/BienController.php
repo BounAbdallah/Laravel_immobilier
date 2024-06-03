@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bien;
 use Illuminate\Http\Request;
 use App\Models\Bien;
 

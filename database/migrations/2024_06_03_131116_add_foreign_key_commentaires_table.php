@@ -11,7 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::table('commentaires', function (Blueprint $table) {
+
+            $table->unsignedBigInteger('bien_id')->after('contenu');
+            $table->foreign('bien_id')->references('id')->on('biens');
+        });
     }
 
     /**
@@ -19,6 +23,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::table('commentaires', function (Blueprint $table) {
+            $table->dropForeign('commentaires_bien_id_foreign');
+            $table->dropColumn('bien_id');
+        });
     }
 };
