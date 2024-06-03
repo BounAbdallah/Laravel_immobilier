@@ -16,4 +16,9 @@ class Bien extends Model
         'adresse',
         'statut',
     ];
+
+    public function biens()
+    {
+        return $this->hasMany(Bien::class);
+    }
 }
