@@ -9,19 +9,40 @@
     <style>
         .container {
             max-width: 600px;
-            margin-top: 50px;
+        }
+        .form-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Hauteur de la vue pour centrer verticalement */
+        }
+        .form-box {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .gauche {
+            height: 100vh; /* Hauteur de la vue pour correspondre au conteneur */
+            width: 100%;
+            object-fit: cover;
+            margin-top: 20px;
+            margin-bottom: 20px;
+
         }
     </style>
 </head>
 <body>
-    <!-- Conteneur principal -->
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 text-center">
-                <!-- Titre de la page -->
-                <h1>Ajouter un bien</h1>
-                <!-- Ligne de séparation -->
-                <hr>
+    <div class="row g-0 bg-body-secondary">
+        <div class="col-md-6 mb-md-0">
+          <img src="{{asset('img/slide2.jpg')}}" class="gauche" alt="...">
+        </div>
+        <!-- Conteneur principal -->
+        <div class="col-md-6 d-flex align-items-center justify-content-center">
+            <div class="container form-box">
+                <div class="text-center mb-4">
+                    <h1>Ajouter un bien</h1>
+                </div>
                 <!-- Affichage des messages de statut -->
                 @if (session('status'))
                     <div class="alert alert-success">
@@ -76,13 +97,16 @@
                         </div>
                     @endif
                     <!-- Boutons de soumission et de retour -->
-                    <button type="submit" class="btn btn-primary">Ajouter un bien</button>
-                    <a href="/biens" class="btn btn-danger mt-3">Retourner</a>
+                    <div class="d-flex justify-content-between mt-5">
+                        <button type="submit" class="btn btn-primary me-2">Ajouter un bien</button>
+                        <a href="/biens" class="btn btn-danger mt-3">Retourner</a>
+                    </div>
+                    
                 </form>
             </div>
         </div>
     </div>
-
+    
     <!-- Chargement de Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>

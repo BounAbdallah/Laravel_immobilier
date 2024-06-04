@@ -7,11 +7,6 @@
     <!-- Inclusion de Bootstrap CSS pour le style -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
-        .card-img-top {
-            object-fit: cover;
-            height: 300px;
-            width: 100%;
-        }
         .container {
             max-width: 900px;
             margin-top: 50px;
@@ -21,27 +16,31 @@
 <body>
     <div class="container text-center">
         <h1 class="mb-4">Détails du Bien Immobilier</h1>
-        <a class="btn btn-outline-secondary mb-4" href="/biens/ajouter">Ajouter</a>
+        {{-- <a class="btn btn-outline-secondary mb-4" href="/biens/ajouter">Ajouter</a> --}}
         
         <div class="row justify-content-center">
-            <div class="col-md-8 mb-4">
-                <div class="card">
-                    <img src="{{ $bien->image }}" class="card-img-top" alt="{{ $bien->nom }}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $bien->nom }}</h5>
-                        <div class="card-text">{{ $bien->categorie }}</div>
-                        <div class="card-text">{{ $bien->adresse }}</div>
-                        <div class="card-text">{{ $bien->statut }}</div>
-                        <p class="card-text">{{ $bien->description }}</p>
-                        <p class="card-text"><small class="text-muted">Date de création: {{ $bien->created_at }}</small></p>
-                    </div>
+            <div class="col-md-8">
+                <!-- Section des détails du bien immobilier -->
+                <div class="details mb-4">
+                    <!-- Affichage de l'image de la villa -->
+        <img src="{{ $bien->image }}" class="img-fluid mt-6" alt="{{ $bien->nom }}">
+
+                    <h5>{{ $bien->nom }}</h5>
+                    <div>{{ $bien->categorie }}</div>
+                    <div>{{ $bien->adresse }}</div>
+                    <div>{{ $bien->statut }}</div>
+                    <p>{{ $bien->description }}</p>
+                    <p><small class="text-muted">Date de création: {{ $bien->created_at }}</small></p>
                 </div>
+                <hr>
             </div>
         </div>
 
+        
         <!-- Section des commentaires -->
         <div class="comments mt-5">
             <h2>Commentaires</h2>
+            <!-- Formualire de commentaire -->
             <div class="card my-4">
                 <h5 class="card-header">Laisser un commentaire:</h5>
                 <div class="card-body">
