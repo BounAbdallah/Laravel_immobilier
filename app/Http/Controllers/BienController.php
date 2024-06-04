@@ -35,7 +35,10 @@ class BienController extends Controller
         Bien::create($request->all());
         return redirect('/biens')->with('status', 'Le bien a été ajouté avec succès');
     }
-
+    public function dashboard()
+    {
+        return view('dashboard');
+    }
 
 
 

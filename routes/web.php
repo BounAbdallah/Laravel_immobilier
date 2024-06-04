@@ -6,29 +6,10 @@ use App\Http\Controllers\BienController;
 use App\Http\Controllers\CommentaireController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\AuthController;
-
+use App\Http\Controllers\DashboardController;
 
 Route::get('/', [BienController::class, 'index']);
 
-
-// Routes pour les biens
-Route::get('/biens', [BienController::class, 'index']);
-Route::get('/biens/ajouter', [BienController::class, 'ajouter']);
-Route::post('/biens/traitement', [BienController::class, 'traitement']);
-Route::get('/update-bien/{id}',[BienController::class,'update']);
-Route::post('/update-bien/{id}',[BienController::class,'updateTraitement']);
-Route::get('/bien/delete/{id}',[BienController::class,'delete']);
-
-
-// Routes pour les commentaires
-Route::post('/biens/{bien}/commentaires', [CommentaireController::class, 'store'])->name('commentaires.store');
-Route::get('/commentaires/{commentaire}/edit', [CommentaireController::class, 'edit'])->name('commentaires.edit');
-Route::put('/commentaires/{commentaire}', [CommentaireController::class, 'update'])->name('commentaires.update');
-Route::delete('/commentaires/{commentaire}', [CommentaireController::class, 'destroy'])->name('commentaires.destroy');
-
-
-//sa permet de raccourcir les routes au préalable définit dans la méthode du controller
-Route::resource('biens', BienController::class);
 
 
 // Routes pour les users
@@ -51,9 +32,13 @@ Route::post('register', [AuthController::class, 'register']);
 
 
 // Cette route joue le rôle de protecteur du dashboard avec le middleware qui protege le dashboard par une authentification obligatoire avant d'y acceder
-Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
 
+
+Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+    Route::get('/biens/create', [DashboardController::class, 'create'])->name('create_bien');
+    Route::post('/biens', [DashboardController::class, 'store'])->name('store_bien');
+    Route::get('/biens/{id}/edit', [DashboardController::class, 'edit'])->name('edit_bien');
+    Route::put('/biens/{id}', [DashboardController::class, 'update'])->name('update_bien');
+    Route::delete('/biens/{id}', [DashboardController::class, 'delete'])->name('delete_bien');
+});
