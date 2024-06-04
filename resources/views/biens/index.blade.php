@@ -11,86 +11,118 @@
     <!-- Inclusion de Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <style>
-      /* CSS personnalisé pour ajuster la taille des images dans les cartes */
-.card-img-top {
-    object-fit: cover;
-    height: 300px;
-    width: 100%;
-}
-/* CSS pour centrer le contenu */
-.row {
-    width: 100%;
-    margin-bottom: 5px;
-}
-/* CSS pour l'en-tête */
-.navbar-custom {
-    background: linear-gradient(45deg, #01bddf, #005f9e);
-    padding: 15px 10px;
-}
-.navbar-custom .navbar-brand,
-.navbar-custom .nav-link {
-    color: #ffffff;
-    font-size: 18px;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-.navbar-custom .nav-link:hover {
-    color: #d3d3d3;
-}
-.navbar-custom .navbar-toggler {
-    border: none;
-}
-.navbar-custom .navbar-toggler-icon {
-    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba%28255, 255, 255, 0.7%29" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
-}
-/* CSS pour les images du carrousel */
-.carousel-item img {
-    object-fit: cover;
-    width: 100%;
-    height: 600px; /* Ajustez la hauteur selon vos besoins */
-    margin-bottom: 20px;
-}
-.carousel-caption {
-    background: rgba(41, 8, 8, 0.5); /* Fond semi-transparent noir */
-    padding: 20px;
-    border-radius: 10px;
-    width: 70%;
-    height: 30%;
-}
-.carousel-caption h5,
-.carousel-caption p {
-    color: #fff; /* Couleur blanche pour le texte */
-}
-/* Animation pour le titre */
-@keyframes slideIn {
-    from {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-.animated-title {
-    animation: slideIn 1s ease-in-out;
-}
-.container2 {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    margin-top: 80px;
-    gap: 10px;
-}
-/* Alignement du texte à gauche pour les cartes */
-.card-body {
-    text-align: left; /* Alignement du texte à gauche */
-    font-family: 'Poppins', sans-serif; /* Utilisation de la police Poppins */
-}
-.card-title {
-    font-family: 'Montserrat', sans-serif; /* Utilisation de la police Montserrat pour les titres */
-}
-    </style>
+        /* CSS personnalisé pour ajuster la taille des images dans les cartes */
+  .card-img-top {
+      object-fit: cover;
+      height: 300px;
+      width: 100%;
+  }
+  /* CSS pour centrer le contenu */
+  .row {
+      width: 100%;
+      margin-bottom: 5px;
+  }
+  /* CSS pour l'en-tête */
+  .navbar-custom {
+      background: linear-gradient(45deg, #01bddf, #005f9e);
+      padding: 15px 10px;
+  }
+  .navbar-custom .navbar-brand,
+  .navbar-custom .nav-link {
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: bold;
+      transition: color 0.3s ease;
+  }
+  .navbar-custom .nav-link:hover {
+      color: #d3d3d3;
+  }
+  .navbar-custom .navbar-toggler {
+      border: none;
+  }
+  .navbar-custom .navbar-toggler-icon {
+      background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba%28255, 255, 255, 0.7%29" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+  }
+  /* CSS pour les images du carrousel */
+  .carousel-item img {
+      object-fit: cover;
+      width: 100%;
+      height: 600px; /* Ajustez la hauteur selon vos besoins */
+      margin-bottom: 20px;
+  }
+  .carousel-caption {
+      background: rgba(41, 8, 8, 0.5); /* Fond semi-transparent noir */
+      padding: 20px;
+      border-radius: 10px;
+      width: 70%;
+      height: 30%;
+  }
+  .carousel-caption h5,
+  .carousel-caption p {
+      color: #fff; /* Couleur blanche pour le texte */
+  }
+  /* Animation pour le titre */
+  @keyframes slideIn {
+      from {
+          transform: translateX(-100%);
+          opacity: 0;
+      }
+      to {
+          transform: translateX(0);
+          opacity: 1;
+      }
+  }
+  .animated-title {
+      animation: slideIn 1s ease-in-out;
+  }
+  .container2 {
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      margin-top: 80px;
+      gap: 10px;
+  }
+  /* Alignement du texte à gauche pour les cartes */
+  .card-body {
+      text-align: left; /* Alignement du texte à gauche */
+      font-family: 'Poppins', sans-serif; /* Utilisation de la police Poppins */
+  }
+  .card-title {
+      font-family: 'Montserrat', sans-serif; /* Utilisation de la police Montserrat pour les titres */
+  }
+  /* Footer */
+  .footer {
+      background-color: #005f9e;
+      color: #ffffff;
+      padding: 50px 0;
+  }
+  .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+  }
+  .footer-section {
+      width: 300px;
+  }
+  .footer-section h3 {
+      font-size: 20px;
+      margin-bottom: 20px;
+  }
+  .footer-section ul {
+      list-style: none;
+      padding: 0;
+  }
+  .footer-section ul li {
+      margin-bottom: 10px;
+  }
+  .footer-section a {
+      color: #ffffff;
+      text-decoration: none;
+  }
+  .footer-section a:hover {
+      text-decoration: underline;
+  }
+      </style>
 
 </head>
 <body>
@@ -187,7 +219,7 @@
 
                             <!-- Boutons d'actions (suppression et modification) -->
                              {{-- <a href="{{ url('/bien/delete/'.$bien->id) }}" class="btn btn-danger">Supprimer</a> --}}
-                            <a href="/update-bien/{{ $bien->id }}" class="btn btn-primary">Modifier</a> 
+                            {{-- <a href="/update-bien/{{ $bien->id }}" class="btn btn-primary">Modifier</a>  --}}
                         </div>
                         <a class="btn btn-info btn-sm" href="{{ route('biens.show', $bien->id) }}">
                                 <i class="fa-solid fa-list"></i> Voir
@@ -198,6 +230,39 @@
         </div>
     </div>
     </div>
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <ul>
+                    <li><i class="bi bi-geo-alt-fill"></i> 123 Rue de la Liberté, Ville, Pays</li>
+                    <li><i class="bi bi-envelope-fill"></i> contact@example.com</li>
+                    <li><i class="bi bi-phone-fill"></i> +1234567890</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Réseaux Sociaux</h3>
+                <ul>
+                    <li><a href="#"><i class="bi bi-facebook"></i> Facebook</a></li>
+                    <li><a href="#"><i class="bi bi-twitter"></i> Twitter</a></li>
+                    <li><a href="#"><i class="bi bi-instagram"></i> Instagram</a></li>
+                    <li><a href="#"><i class="bi bi-linkedin"></i> LinkedIn</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Liens Utiles</h3>
+                <ul>
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">À propos</a></li>
+                    <li><a href="#">Nos Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
 
     <!-- Inclusion de Bootstrap JS pour les fonctionnalités interactives -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
