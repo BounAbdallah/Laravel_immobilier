@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 
-use Illuminate\Http\Request;
 use App\Models\Bien;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 
 class BienController extends Controller
@@ -34,6 +35,17 @@ class BienController extends Controller
         Bien::create($request->all());
         return redirect('/biens')->with('status', 'Le bien a été ajouté avec succès');
     }
+
+
+
+
+    public function show(Bien $bien)
+    {
+        Log::info('Bien:', ['bien' => $bien->toArray()]);
+        Log::info('Commentaires:', ['commentaires' => $bien->commentaires->toArray()]);
+        return view('biens.show', compact('bien'));
+     return view('biens.show', compact('bien'));
+     }  
      // Méthode pour afficher le formulaire de mise à jour d'un bien
 
      public function update($id)
@@ -66,3 +78,4 @@ class BienController extends Controller
 
     }
 }
+    

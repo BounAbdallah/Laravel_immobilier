@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Bien extends Model
 {
     use HasFactory;
+    
     protected $fillable = [
         'nom',
         'categorie',
@@ -17,8 +18,8 @@ class Bien extends Model
         'statut',
     ];
 
-    public function biens()
+    public function commentaires()
     {
-        return $this->hasMany(Bien::class);
+        return $this->hasMany(Commentaire::class);
     }
 }
