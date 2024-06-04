@@ -30,11 +30,11 @@
     @csrf
 <input type="text" name="id" style="display: none;" value="{{$bien->id}}">
 <label for="nom" class="form-label">Nom</label>
-<input type="text" class="form-control" id="nom" name="nom">
+<input type="text" class="form-control" id="nom" name="nom" value="{{$bien->nom}}">
 </div>
 <div class="mb-3 text-start">
     <label for="categorie" class="form-label">Catégorie</label>
-    <select class="form-control" id="categorie" name="categorie">
+    <select class="form-control" id="categorie" name="categorie" value="{{$bien->categorie}}">
         <option value="luxe">Luxe</option>
         <option value="moyen">Moyen</option>                      
         <option value="classique">Classique</option>
@@ -42,19 +42,19 @@
 </div>
 <div class="mb-3 text-start">
 <label for="image" class="form-label">Image (URL)</label>
-<input type="text" class="form-control" id="image" name="image">
+<input type="text" class="form-control" id="image" name="image" value="{{$bien->image}}">
 </div>
 <div class="mb-3 text-start">
 <label for="description" class="form-label">Description</label>
-<input type="text" class="form-control" id="description" name="description">
+<input type="text" class="form-control" id="description" name="description" value="{{$bien->description}}">
 </div>
 <div class="mb-3 text-start">
 <label for="adresse" class="form-label">Adresse</label>
-<input type="text" class="form-control" id="adresse" name="adresse">
+<input type="text" class="form-control" id="adresse" name="adresse" value="{{$bien->adresse}}">
 </div>
 <div class="mb-3 text-start">
 <label for="statut" class="form-label">Statut</label>
-<select class="form-control" id="statut" name="statut">
+<select class="form-control" id="statut" name="statut" value="{{$bien->statut}}">
     <option value="1">Occupé</option>
     <option value="0">Pas Occupé</option>
 </select>
