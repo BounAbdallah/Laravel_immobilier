@@ -33,8 +33,12 @@
 <input type="text" class="form-control" id="nom" name="nom">
 </div>
 <div class="mb-3 text-start">
-<label for="nom" class="form-label">Categorie</label>
-<input type="string" class="form-control" id="categorie" name="categorie">
+    <label for="categorie" class="form-label">Catégorie</label>
+    <select class="form-control" id="categorie" name="categorie">
+        <option value="luxe">Luxe</option>
+        <option value="moyen">Moyen</option>                      
+        <option value="classique">Classique</option>
+    </select>
 </div>
 <div class="mb-3 text-start">
 <label for="image" class="form-label">Image (URL)</label>
