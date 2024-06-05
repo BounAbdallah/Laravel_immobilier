@@ -1,10 +1,10 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-
 use App\Http\Controllers\BienController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CommentaireController;
+
 
 
 
@@ -28,6 +28,7 @@ Route::put('/commentaires/{commentaire}', [CommentaireController::class, 'update
 Route::delete('/commentaires/{commentaire}', [CommentaireController::class, 'destroy'])->name('commentaires.destroy');
 
 
+Route::resource('biens', BienController::class);
 
 // Routes for user authentication
 Route::get('login', [AuthController::class, 'showLoginForm'])->name('login');
