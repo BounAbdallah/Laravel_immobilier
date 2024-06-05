@@ -42,3 +42,4 @@ Route::middleware('auth')->group(function () {
     Route::put('/biens/{id}', [DashboardController::class, 'update'])->name('update_bien');
     Route::delete('/biens/{id}', [DashboardController::class, 'delete'])->name('delete_bien');
 });
+Route::resource('biens', BienController::class);
