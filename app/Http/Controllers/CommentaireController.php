@@ -13,8 +13,8 @@ class CommentaireController extends Controller
     public function store(Request $request, Bien $bien)
     {
         $request->validate([
-            'auteur' => 'required',
-            'contenu' => 'required'
+            'auteur' => 'required|string|max:255',
+            'contenu' => 'required|string',
         ]);
 
         $commentaire = new Commentaire();
@@ -34,8 +34,8 @@ class CommentaireController extends Controller
     public function update(Request $request, Commentaire $commentaire)
     {
         $request->validate([
-            'auteur' => 'required',
-            'contenu' => 'required'
+            'auteur' => 'required|string|max:255',
+            'contenu' => 'required|string',
         ]);
 
         $commentaire->update($request->all());

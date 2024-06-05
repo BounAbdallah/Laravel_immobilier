@@ -3,19 +3,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Bien;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
-    
-
     public function dashboard()
     {
         $biens = Bien::all();
-        $biensCount = Bien::count(); // Compter le nombre de biens
-
-        // Compter le nombre de biens occupés et non occupés
+        $biensCount = Bien::count();
         $biensOccupes = Bien::where('statut', 1)->count();
         $biensNonOccupes = Bien::where('statut', 0)->count();
 
@@ -50,7 +45,6 @@ class DashboardController extends Controller
         $bien->statut = $request->input('statut');
         $bien->description = $request->input('description');
         $bien->adresse = $request->input('adresse');
-        
         $bien->image = $request->input('image');
         $bien->save();
 
@@ -59,10 +53,7 @@ class DashboardController extends Controller
 
     public function edit($id)
     {
-        // Récupérer le bien à éditer en fonction de son ID
         $bien = Bien::findOrFail($id);
-
-        // Afficher le formulaire d'édition avec les données du bien
         return view('edit_bien', compact('bien'));
     }
 

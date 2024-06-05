@@ -17,8 +17,10 @@
             margin-top: 30px;
         }
         .navbar-custom {
-            background-color: #01bddf;
-        }
+    padding: 12px;
+      background: linear-gradient(45deg, #01bddf, #005f9e);
+      padding: 15px 10px;
+  }
         .navbar-custom .navbar-brand,
         .navbar-custom .nav-link {
             color: #ffffff;
@@ -125,11 +127,11 @@
     <div class="row d-flex">
         <div class="row d-flex row-d ">
             <div class="col-4">
-                <a href="/biens/ajouter"><button type="button" class="btn btn-outline-secondary bouton">Ajouter un bien</button></a> 
+                <a href="/create"><button type="button" class="btn btn-outline-secondary bouton">Ajouter un bien</button></a> 
             </div>
-            <div class="col-4 mt-4">
+            <!-- <div class="col-4 mt-4">
                 <button type="button" class="btn btn-outline-secondary bouton">Liste de biens</button>
-            </div>
+            </div> -->
         </div>
         <div class="col-8">
             <div class="card" style="width: 18rem; height:300px;">
@@ -174,18 +176,17 @@
                         <td>{{ $bien->categorie }}</td>
                         <td>
                             <div class="d-flex justify-content-between">
-                                <a href="#" class="btn btn-info btn-sm">
+                                <!-- <a href="#" class="btn btn-info btn-sm">
                                     <i class="fa-solid fa-list"></i> Voir
-                                </a>
+                                </a> -->
                                 <a href="{{ route('edit_bien', ['id' => $bien->id]) }}" class="btn btn-primary btn-sm">
-    <i class="fa-solid fa-pen-to-square"></i> Mod
-</a>
+    <i class="fa-solid fa-pen-to-square"></i> Modifier</a>
 
 <form action="{{ route('delete_bien', ['id' => $bien->id]) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this bien?');">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger btn-sm">
-                        <i class="fa-solid fa-trash"></i> Supp
+                        <i class="fa-solid fa-trash"></i> Supprimer
                     </button>
                 </form>
                             </div>

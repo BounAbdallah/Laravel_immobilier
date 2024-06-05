@@ -136,7 +136,8 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="login">
+
                             <i class="bi bi-person-circle"></i> Connexion
                         </a>
                     </li>
