@@ -50,10 +50,3 @@ Route::middleware('auth')->group(function () {
 
 
 
-// Cette route joue le rôle de protecteur du dashboard avec le middleware qui protege le dashboard par une authentification obligatoire avant d'y acceder
-Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
-

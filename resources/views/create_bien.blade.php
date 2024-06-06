@@ -92,7 +92,7 @@
                     <!-- Boutons de soumission et de retour -->
                     <div class="d-flex justify-content-between mt-5">
                         <button type="submit" class="btn btn-primary me-2">Ajouter un bien</button>
-                        <a href="/biens" class="btn btn-danger mt-3">Retourner</a>
+                        <a href="/dashboard" class="btn btn-danger mt-3">Retourner</a>
                     </div>
                 </form>
             </div>
