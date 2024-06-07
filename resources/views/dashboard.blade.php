@@ -129,9 +129,9 @@
             <div class="col-4">
                 <a href="/create"><button type="button" class="btn btn-outline-secondary bouton">Ajouter un bien</button></a> 
             </div>
-            <!-- <div class="col-4 mt-4">
-                <button type="button" class="btn btn-outline-secondary bouton">Liste de biens</button>
-            </div> -->
+            <div class="col-4 mt-4">
+            <a href="/logout"><button type="button" class="btn btn-outline-secondary bouton">Déconnexion</button></a>
+            </div>
         </div>
         <div class="col-8">
             <div class="card" style="width: 18rem; height:300px;">

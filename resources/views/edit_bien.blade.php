@@ -34,7 +34,7 @@
 <body>
     <div class="row g-0 bg-body-secondary">
         <div class="col-md-6 mb-md-0">
-          <img src="{{asset('img/slide4.jpg')}}" class="gauche" alt="...">
+          <img src="{{ $bien->image }}" class="gauche" alt="...">
         </div>
         <!-- Conteneur principal -->
         <div class="col-md-6 d-flex align-items-center justify-content-center">
